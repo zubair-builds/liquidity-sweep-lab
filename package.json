@@ -1,0 +1,31 @@
+{
+  "name": "ict-sweep-monitor",
+  "version": "2.0.0",
+  "description": "ICT/SMC liquidity sweep model served over HTTP — bars are pushed in by the caller, not fetched",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "legacy-start": "node server.js",
+    "analyze": "node cli.js",
+    "backtest": "node backtest.js",
+    "test": "node test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "next": "^16.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.0",
+    "postcss": "^8.5.25",
+    "tailwindcss": "^3.4.19"
+  }
+}

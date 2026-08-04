@@ -1,0 +1,39 @@
+{
+  "port": 8787,
+  "host": "127.0.0.1",
+
+  "apiKey": null,
+  "maxBars": 20000,
+
+  "costs": {
+    "spreadPoints": 0.3,
+    "slippagePoints": 0.2
+  },
+
+  "profiles": {
+    "default": {
+      "pivotLen": 5,
+      "structLen": 5,
+      "confirmBars": 6,
+      "dispMult": 0.6,
+      "requireFVG": true,
+      "requirePD": true,
+      "pdLookback": 50,
+      "slBufferATR": 0.25,
+      "tpMode": "fixedRR",
+      "rr": 2.0,
+      "minRR": 1.0,
+      "allowLongs": true,
+      "allowShorts": true,
+      "maxRiskATR": 0
+    },
+
+    "XAUUSD:1h": {
+      "pivotLen": 4
+    },
+
+    "XAUUSD:4h": {
+      "pivotLen": 5
+    }
+  }
+}

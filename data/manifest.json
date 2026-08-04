@@ -1,0 +1,217 @@
+{
+  "generated": "2026-08-04T18:40:56.910Z",
+  "note": "Real IBKR get_price_history responses, stored verbatim. Regenerate with: node verify-data.js",
+  "source": {
+    "endpoint": "IBKR get_price_history (MCP connector)",
+    "priceType": "MidPoint",
+    "knownLimits": [
+      "Caps at 3500 data points per request.",
+      "No start-date parameter — every response ends at the present, so history cannot be paged backwards.",
+      "Responses above ~25k tokens are rejected, capping a single retrieval at a few hundred bars."
+    ]
+  },
+  "contracts": {
+    "xauusd-4h.json": {
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "FOUR_HOURS",
+      "outsideRth": true
+    },
+    "xauusd-1h.json": {
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_HOUR",
+      "outsideRth": true
+    },
+    "xauusd-1d.json": {
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_DAY",
+      "outsideRth": true
+    },
+    "xauusd-15m.json": {
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "FIFTEEN_MINS",
+      "outsideRth": true
+    },
+    "xagusd-1h.json": {
+      "instrument": "XAGUSD",
+      "name": "London Silver",
+      "contractId": 77124483,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_HOUR",
+      "outsideRth": true
+    },
+    "tsla-1h.json": {
+      "instrument": "TSLA",
+      "name": "Tesla Inc",
+      "contractId": 76792991,
+      "securityType": "STK",
+      "exchange": "NASDAQ",
+      "step": "ONE_HOUR",
+      "outsideRth": false
+    },
+    "rddt-1h.json": {
+      "instrument": "RDDT",
+      "name": "Reddit Inc Cl A",
+      "contractId": 692025016,
+      "securityType": "STK",
+      "exchange": "NYSE",
+      "step": "ONE_HOUR",
+      "outsideRth": false
+    }
+  },
+  "datasets": [
+    {
+      "file": "data/rddt-1h.json",
+      "instrument": "RDDT",
+      "name": "Reddit Inc Cl A",
+      "contractId": 692025016,
+      "securityType": "STK",
+      "exchange": "NYSE",
+      "step": "ONE_HOUR",
+      "outsideRth": false,
+      "bars": 862,
+      "barMinutes": 60,
+      "from": "2026-02-05T19:00",
+      "to": "2026-08-04T18:00",
+      "spanDays": 180,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/tsla-1h.json",
+      "instrument": "TSLA",
+      "name": "Tesla Inc",
+      "contractId": 76792991,
+      "securityType": "STK",
+      "exchange": "NASDAQ",
+      "step": "ONE_HOUR",
+      "outsideRth": false,
+      "bars": 701,
+      "barMinutes": 60,
+      "from": "2026-03-11T18:00",
+      "to": "2026-08-04T18:00",
+      "spanDays": 146,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/xagusd-1h.json",
+      "instrument": "XAGUSD",
+      "name": "London Silver",
+      "contractId": 77124483,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_HOUR",
+      "outsideRth": true,
+      "bars": 801,
+      "barMinutes": 60,
+      "from": "2026-06-16T15:00",
+      "to": "2026-08-04T18:00",
+      "spanDays": 49,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/xauusd-15m.json",
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "FIFTEEN_MINS",
+      "outsideRth": true,
+      "bars": 801,
+      "barMinutes": 15,
+      "from": "2026-07-23T02:30",
+      "to": "2026-08-04T18:30",
+      "spanDays": 13,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/xauusd-1d.json",
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_DAY",
+      "outsideRth": true,
+      "bars": 800,
+      "barMinutes": 1440,
+      "from": "2023-06-28T22:00",
+      "to": "2026-08-03T22:00",
+      "spanDays": 1132,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/xauusd-1h.json",
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "ONE_HOUR",
+      "outsideRth": true,
+      "bars": 902,
+      "barMinutes": 60,
+      "from": "2026-06-10T04:00",
+      "to": "2026-08-04T16:00",
+      "spanDays": 56,
+      "structuralChecks": "pass",
+      "warnings": 0
+    },
+    {
+      "file": "data/xauusd-4h.json",
+      "instrument": "XAUUSD",
+      "name": "London Gold",
+      "contractId": 69067924,
+      "securityType": "CMDTY",
+      "exchange": "IBCMDTY",
+      "step": "FOUR_HOURS",
+      "outsideRth": true,
+      "bars": 671,
+      "barMinutes": 240,
+      "from": "2026-03-20T08:00",
+      "to": "2026-08-04T16:00",
+      "spanDays": 137,
+      "structuralChecks": "pass",
+      "warnings": 0
+    }
+  ],
+  "crossChecks": [
+    {
+      "coarse": "xauusd-1h.json",
+      "fine": "xauusd-15m.json",
+      "barsCompared": 198,
+      "identical": 197,
+      "differing": 1,
+      "note": "Differences confined to the final, still-forming bar (the coarser file was fetched earlier)."
+    },
+    {
+      "coarse": "xauusd-4h.json",
+      "fine": "xauusd-1h.json",
+      "barsCompared": 196,
+      "identical": 196,
+      "differing": 0,
+      "note": "Exact agreement — independent confirmation of both files."
+    }
+  ]
+}
