@@ -14,14 +14,18 @@ The previous version opened its own connection to the IBKR Client Portal Gateway
 
 ## Running it
 
-This project is built with Next.js and includes a visual dashboard, making it ready for 1-click deployment to Vercel.
+This project is built with Next.js and includes a rich, multi-screen visual dashboard, making it ready for 1-click deployment to Vercel.
 
 ```bash
 npm install        # Install Next.js & React dependencies
 npm run dev        # Starts the frontend dashboard and API on http://localhost:3000
 ```
 
-You can view the dashboard by opening `http://localhost:3000` in your browser. The dashboard allows you to paste JSON payloads and run Backtests or Analysis directly.
+You can view the dashboard by opening `http://localhost:3000` in your browser. The interface features:
+- **Four screens:** Overview, Analyze, Backtest, and Settings.
+- **Interactive Charting:** Visualizes candles, swept levels, FVGs, and entry/target lines.
+- **Condition Ladder:** A visual 5-step ladder to see exactly where setups pass, skip, or fail.
+- **Live Settings:** Adjust model parameters and immediately see the results.
 
 ```bash
 npm test             # 38 core logic tests, no network required
