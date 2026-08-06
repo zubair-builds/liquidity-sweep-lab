@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Dashboard() {
   const [input, setInput] = useState('');
@@ -8,6 +8,13 @@ export default function Dashboard() {
   const [error, setError] = useState(null);
   const [view, setView] = useState('analyze'); // 'analyze' or 'backtest'
   const [selectedDataset, setSelectedDataset] = useState('');
+  const [datasets, setDatasets] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/data').then(res => res.json()).then(data => {
+      if (data.datasets) setDatasets(data.datasets);
+    }).catch(console.error);
+  }, []);
 
   const handleDatasetChange = async (e) => {
     const file = e.target.value;
@@ -98,9 +105,11 @@ export default function Dashboard() {
               onChange={handleDatasetChange}
             >
               <option value="">-- Or load a dataset --</option>
-              <option value="xauusd-4h.json">XAUUSD 4H</option>
-              <option value="xauusd-1h-real.json">XAUUSD 1H Real</option>
-              <option value="sample-xauusd-1h.json">XAUUSD 1H Sample</option>
+              {datasets.map((d, i) => (
+                <option key={i} value={d.file}>
+                  {d.instrument} {d.step.replace('_', ' ')} ({d.name}) - {d.bars} bars
+                </option>
+              ))}
             </select>
           </div>
           <textarea

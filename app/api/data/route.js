@@ -6,17 +6,22 @@ export async function GET(request) {
   const { searchParams } = new URL(request.url);
   const file = searchParams.get('file');
 
+  const manifestPath = path.join(process.cwd(), 'data', 'manifest.json');
+  
   if (!file) {
-    return NextResponse.json({ error: 'File parameter is required' }, { status: 400 });
+    try {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      return NextResponse.json({ datasets: manifest.datasets });
+    } catch (e) {
+      return NextResponse.json({ error: 'Manifest not found' }, { status: 500 });
+    }
   }
 
-  const allowedFiles = ['xauusd-4h.json', 'xauusd-1h-real.json', 'sample-xauusd-1h.json'];
-  if (!allowedFiles.includes(file)) {
-    return NextResponse.json({ error: 'Invalid file' }, { status: 400 });
-  }
+  // Prevent directory traversal
+  const safeFile = path.basename(file);
+  const filePath = path.join(process.cwd(), 'data', safeFile);
 
   try {
-    const filePath = path.join(process.cwd(), file);
     const content = fs.readFileSync(filePath, 'utf8');
     return NextResponse.json(JSON.parse(content));
   } catch (error) {
