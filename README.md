@@ -2,8 +2,6 @@
 
 ICT / SMC liquidity-sweep model over HTTP. You POST OHLC bars; it returns a decision (state, action, levels, checks). It does not fetch market data and does not place orders.
 
-Suggested repo name: `liquidity-sweep-lab`.
-
 ```text
 caller (IBKR / file / agent)  --POST bars-->  Next.js API  -->  { state, action, signal, checks }
 ```
@@ -21,8 +19,8 @@ caller (IBKR / file / agent)  --POST bars-->  Next.js API  -->  { state, action,
 ## Setup
 
 ```bash
-git clone https://github.com/zubair-builds/TradeLab.git
-cd TradeLab
+git clone https://github.com/zubair-builds/liquidity-sweep-lab.git
+cd liquidity-sweep-lab
 npm install
 npm run dev
 ```
@@ -43,7 +41,7 @@ node cli.js sample-xauusd-1h.json
 - Last forming bar is dropped unless `lastBarClosed: true`
 - Backtest books a loss if stop and target hit the same bar
 
-See the previous long README history for payload examples. Sample fixture: `sample-xauusd-1h.json`.
+Sample fixture: `sample-xauusd-1h.json`.
 
 ## Honest limits
 
